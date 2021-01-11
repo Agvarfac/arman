@@ -1,0 +1,12 @@
+body {
+  font-family: 'InterRegular', sans-serif !important;
+}
+
+section {
+  margin-top: 100px;
+}
+
+img {
+  height: 30%;
+  width: 30%;
+}
