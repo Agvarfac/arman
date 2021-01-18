@@ -1,0 +1,19 @@
+/* estilos de am_inventario.html */
+
+.componentes {
+  margin-top: 3em;
+  margin-left: 0;
+}
+
+.lista-componentes {
+  list-style-type: none;
+  width: 250px;
+}
+
+.lista-componentes > li > a {
+  color: #0B2545;
+  text-decoration: none;
+}
+.lista-componentes >li:hover {
+  background-color: #bdbdbd;
+}
