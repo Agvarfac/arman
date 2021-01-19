@@ -4,3 +4,7 @@
   background-color: #163172;
   
 }
+
+.activo {
+  border-bottom: 4px solid white;
+}
