@@ -14,30 +14,62 @@
     <link rel="stylesheet" href="css/bt.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm fondomenu font-weight-bold"> 
+  <!-- <nav class="navbar navbar-expand-sm fondomenu font-weight-bold"> 
     <img class="navbar-brand " src="img/Arman_logo32.png" alt="Logotipo de Arman">
     <ul class="navbar-nav">
       <li class="nav-item"><a class="nav-link text-white" href="#">Inventario</a></li>
       <li class="nav-item"><a class="nav-link text-white" href="#">Historico</a></li>
       <li class="nav-item"><a class="nav-link text-white activo" href="#">Banco de trabajo</a></li>
     </ul>
-    <!--<div class="navbar-text ml-sm-auto"> -->
+    <div class="navbar-text ml-sm-auto">
     <div class="navbar-text mr-sm-auto"></div>
       <a class="nav-link text-white" href="#">Usuario</a>
     </div>
-  </nav>  
+  </nav>-->  
 
-  <div class="container-fluid bg-light">
-    <form action="" method="post">
-      <label for="titulo">Título</label>
+  <div class="container bg-light">
+    <ul class="list-group">
+      <a href=""><li class="list-group-item">Inicio del proyecto</li></a>
+      <a href=""><li class="list-group-item">Etapas de desarrollo</li></a>
+      <a href=""><li class="list-group-item">Resultado final</li></a>
+    </ul>
+    <form action="" method="post" id="inicio">
+      <h2>Inicio de proyecto</h2>
+      <hr>
+      <label for="titulo">Nombre del proyecto</label>
       <input type="text" name="titulo" id="titulo">
       <br>
-      <label for="texto">Texto</label>
-      <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
+      <label for="texto">Descripción</label>
+      <textarea name="comentario" id="comentario" cols="30" rows="5"></textarea>
       <br><br>
+      <label for="eligeimagen">Seleccione el esquema eléctrico:</label>
       <input type="file" name="eligeimagen" id="eligeimagen" value="Escoger imagen">
-
+      <br><br>
+      <label for="codigo">Seleccione fichero de código fuente</label>
+      <input type="file" name="codigo" id="codigo">
     </form>
+
+    <form action="" method="post" id="etapa">
+      <h2>Etapas</h2>
+      <hr>
+      <label for="titulo">Título de la etapa</label>
+      <input type="text" name="titetapa" id="titetapa">
+      <br>
+      <label for="comentario">Comentario de la etapa</label>
+      <textarea type="text" cols="30" rows="5" id="cometapa"></textarea>
+      <br>
+      <label for="img">Seleccione fichero de imagen</label>
+      <input type="file" name="img" id="img">
+    </form>
+
+    <form action="" method="post" id="resultado"></form>
+    <h2>Resultado</h2>
+    <hr>
+    <label for="comentario">Comentario de la etapa</label>
+    <textarea type="text" cols="30" rows="5" id="cometapa"></textarea>
+    <br>
+    <label for="img">Seleccione fichero de video</label>
+    <input type="file" name="img" id="img">
 
   </div>
 </body>

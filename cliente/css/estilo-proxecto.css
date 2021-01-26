@@ -1,0 +1,32 @@
+/* Estilos para proxecto.html */
+
+.card-title {
+  font-weight: bold;
+  
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  background-color: #134074;
+  color:#f6f6f6;
+}
+
+.dato {
+  text-align: center;
+}
+
+.btn-codigo, .btn-codigo:active {
+  background-color: #134074;
+  color:white;
+}
+
+.btn-codigo:hover {
+  color: #134074;
+  background-color:white;
+}
+
+
+
