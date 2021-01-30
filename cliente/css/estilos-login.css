@@ -4,6 +4,15 @@ h3 {
   margin: 1.5em;
 }
 
+.container {
+  margin: 20px;
+}
+
 .container > p {
   margin-top: 2rem;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 500px;
 }
