@@ -2,6 +2,10 @@ body {
   font-family: 'InterRegular', sans-serif !important;
 }
 
+.container {
+  margin-top: 3rem;
+}
+
 section {
   margin-top: 100px;
 }
@@ -23,7 +27,11 @@ header> * {
 #inicio {
   height: auto;
   width: 100px;
-  margin: 0 auto;
+  margin: 0 42%;
+}
+
+.lema {
+  font-size: 1.2rem;
 }
 
 
