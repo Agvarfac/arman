@@ -1,0 +1,59 @@
+/* estilos de inventario.html */
+
+/*
+BORRAR
+Os estilo de enbaixo é para móbil para pantalla grande (PC) amosanse a lista 
+maila taboa e o contido da taboa cambia ao facer clic en cad enlace pero non 
+desaparece nada
+*/
+
+/* Listado componentes */
+.componentes {
+  /*border: 2px solid red;*/
+  width:20rem;
+  margin-top: 3em;
+  margin-left: 2em;
+  align-self: flex-start;
+}
+
+.lista-componentes {
+  /*border: 2px solid green;*/
+  list-style-type: none;
+  width: 250px;
+}
+
+.lista-componentes > li > a {
+  color: #0B2545;
+  text-decoration: none;
+}
+.lista-componentes >li:hover {
+  background-color: #bdbdbd;
+}
+
+
+/* Listado elementos */
+
+#elementos {
+  width: 25rem;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  align-self: flex-start;
+}
+
+#items {
+  width: 20rem;
+  /*margin-top: 3rem;*/
+  margin-left: 2rem;
+}
+
+th:last-child,
+td:last-child  {
+  text-align:center;
+}
+
+/* Conjunto de listados */
+
+#listas {
+  display: flex;
+  /*align-content: flex-start;*/
+}

@@ -1,0 +1,19 @@
+/* estilos de historial.html */
+
+header > h4 {
+  width:30%;
+  border:1px solid blue;
+  display: inline-block;
+}
+
+#listaproyectos {
+  margin:1.5em;
+}
+
+#proyecto > main {
+  width: 80%;
+}
+
+#listafin > li {
+  list-style-type: none;
+}

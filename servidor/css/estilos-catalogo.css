@@ -1,0 +1,10 @@
+/* estilos para catalogo.html */
+
+a:hover {
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.etapa {
+  margin-top: 2rem;
+}

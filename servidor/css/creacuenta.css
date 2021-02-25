@@ -1,0 +1,22 @@
+/* estilos para creacuenta.html */
+
+h4 {
+  margin: 1.5em;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.container {
+  margin: 20px;
+}
+
+.botones {
+  margin-top: 2rem;
+}
+
+.botones > button {
+  margin-left: 1rem;
+}
