@@ -1,0 +1,12 @@
+/* Estilos de comienzo.php */
+
+.mensaje {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+p {
+  color: grey;
+  font-size: 3em;
+  padding: 2em;
+}

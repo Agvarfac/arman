@@ -42,7 +42,7 @@
         <ul class="lista-componentes">
           <li><a id="cc" href="#">Componentes complejos</a></li>
           <li><a id="ca" href="#">Cables</a></li>
-          <li><a id="se" href="#" class="font-weight-bold">Sensores</a></li>
+          <li><a id="se" href="#">Sensores</a></li>
           <li><a id="le" href="#">LED</a></li>
           <li><a id="tr" href="#">Transistores</a></li>
           <li><a id="co" href="#">Condensadores</a></li>
@@ -63,7 +63,7 @@
         $dni="11111111H";
 
         foreach ($lista_tablas as $dato) {
-          $datos_tabla[$dato] = obtenerDatosTabla($dato,$BD,$dni);
+          $datos_tabla[$dato] = obtenerDatosTabla($dato,$dni);
           /* Este paso intermedio es necesario porque $datos_tabulados da como $resultado
           *  dos arrays anidados. El array exterior solo tiene un elemento que es el array
           *  con los resultados de la consulta a cada tabla.
@@ -71,7 +71,7 @@
           $datos_tabulados = $datos_tabla[$dato]->fetchAll(PDO::FETCH_ASSOC);
           $tab= $datos_tabulados[0];
                
-          echo '<section id="'.$dato.'">';
+          echo '<section id="'.$dato.'" class="d-none">';
           echo "<h4>".$dato."<i id='volver' class='fas fa-caret-square-left d-none'></i></h4>";
           echo '<table class="table table-striped" id="items">';
           echo '<tr><th>Nombre</th><th>Cantidad</tr>';
@@ -82,7 +82,7 @@
 
       ?>
 
-      <section id="elementos">
+      <!-- <section id="elementos">
         <h4><i id="volver" class="fa fa-caret-square-left d-none"></i>  Sensores</h4>
         <table class="table table-striped" id="items">
           <tr>
@@ -102,7 +102,7 @@
             <td>6</td>
           </tr>
         </table>
-      </section>
+      </section> -->
     </div>
   </div>
 
@@ -127,8 +127,8 @@
       });
 
       if($(window).width <= 768) {
-        $('.lista-compoenentes>li>a').attr('id');
-        $('').click(function(){
+        $id_opcion = $('.lista-compoenentes>li>a').attr('id');
+        $('#'$id_opcion).click(function(){
           $('.componentes').hide();
           $('#volver').removeClass('d-none');
           $('#<?php echo $cat ?>').show();
@@ -139,6 +139,10 @@
           $('#volver').addClass('d-none');
           $('#<?php echo $cat ?>').hide();
         })
+      }
+
+      if($(window).width > 768) {
+
       }
  
       

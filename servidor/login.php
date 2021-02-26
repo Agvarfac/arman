@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="img/Arman_logo_favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/inter-ui" type="text/css" />
+    <!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/inter-ui" type="text/css" /> -->
     <link rel="stylesheet" href="css/estilos-login.css">
   </head>
 
@@ -39,7 +39,7 @@
       <!--<h3>ArMan</h3>-->
       
       <form action="" method="post">
-        <h3 class="text-center">Introduzca datos de acceso</h3>
+        <h3 class="text-center">Introduzca sus datos de acceso</h3>
         <div class="form-group">
           <label for="user">Usuario </label>
           <input type="text" class="form-control" name="user" id="nombre" />
@@ -50,7 +50,7 @@
         </div>
         <button type="submit" name="acceder" class="btn btn-dark">Acceder</button>
       </form>
-      <p class="text-center"><a href="creacuenta.php">Obtener una cuenta de acceso</a></p>
+      <p class="text-center"><a href="creacuenta.html">Obtener una cuenta de acceso</a></p>
     </div>
   </body>
 </html>

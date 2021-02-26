@@ -4,24 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArMan</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link
-      rel="shortcut icon"
-      href="img/Arman_logo_favicon.png"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      media="screen"
-      href="https://fontlibrary.org/face/inter-ui"
-      type="text/css"
-    />
+    <link rel="shortcut icon" href="img/Arman_logo_favicon.png" type="image/x-icon" />
+    <!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/inter-ui" type="text/css" /> -->
     <link rel="stylesheet" href="css/am_inicio.css" />
   </head>
   <body>
@@ -33,11 +21,7 @@
 
     <div class="container">
         <header>
-            <img
-              src="img/Arman_logo128.png"
-              class="img-fluid mx-auto"
-              alt="Logotipo de ArMan"
-            />
+            <img src="img/Arman_logo128.png" class="img-fluid mx-auto" alt="Logotipo de ArMan" />
             <h1>ArMan</h1>
             <h6>The Arduino Manager</h6>
             <!-- <p class="lema"> La solución sus problemas de documentación de sus proyectos. </p> -->
@@ -45,7 +29,7 @@
         <div id="inicio">
           <!-- <button type="button" class="btn btn-primary btn-lg">Iniciar</button>
            -->
-           <a class="btn btn-primary btn-lg" href="login.html">Comencemos</a>
+           <a class="btn btn-primary btn-lg" href="login.php">Comencemos</a>
         </div>
 
      <section class="row align-items-baseline">

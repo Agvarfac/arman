@@ -80,7 +80,7 @@ function leerNombreTablas($BD) {
 /** Obtiene un Array que a su vez contiene otro array que a 
  * su vez contiene los datos de cada tabla como array asociativo
  * correspondiente al usuario con dni $dniusu*/
-function obtenerDatosTabla($nombre_tabla, $nombre_bd, $dniusu) {
+function obtenerDatosTabla($nombre_tabla, $dniusu) {
   global $bdDSN, $bdUsuario, $bdPassword;
   
   try {
