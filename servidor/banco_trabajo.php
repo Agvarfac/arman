@@ -12,7 +12,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="img/Arman_logo_favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/inter-ui" type="text/css" />
     <link rel="stylesheet" href="css/cabecera.css" />
     <link rel="stylesheet" href="css/bt.css" />
   </head>
@@ -20,9 +19,9 @@
      <nav class="navbar navbar-expand-sm fondomenu font-weight-bold"> 
     <img class="navbar-brand " src="img/Arman_logo32.png" alt="Logotipo de Arman">
     <ul class="navbar-nav">
-      <li class="nav-item"><a class="nav-link text-white" href="#">Inventario</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="#">Historico</a></li>
-      <li class="nav-item"><a class="nav-link text-white activo" href="#">Banco de trabajo</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="inventario.php">Inventario</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="catalogo.php">Historico</a></li>
+      <li class="nav-item"><a class="nav-link text-white activo" href="banco_trabajo">Banco de trabajo</a></li>
     </ul>
     <div class="navbar-text ml-sm-auto">
     <div class="navbar-text mr-sm-auto"></div>

@@ -21,8 +21,8 @@
     <img class="navbar-brand " src="img/Arman_logo32.png" alt="Logotipo de Arman">
     <ul class="navbar-nav">
       <li class="nav-item"><a class="nav-link text-white" href="inventario.php">Inventario</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="#">Historico</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="#">Banco de trabajo</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="catalogo.php">Cat&aacute;logo</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="banco_trabajo.php">Banco de trabajo</a></li>
     </ul>
     <!--<div class="navbar-text ml-sm-auto"> -->
     <div class="navbar-text mr-sm-auto"></div>

@@ -27,7 +27,7 @@ desaparece nada
   text-decoration: none;
 }
 .lista-componentes >li:hover {
-  background-color: #bdbdbd;
+  /*background-color: #bdbdbd;*/
 }
 
 
@@ -56,4 +56,8 @@ td:last-child  {
 #listas {
   display: flex;
   /*align-content: flex-start;*/
+}
+
+section {
+  margin-top: 3em;
 }
