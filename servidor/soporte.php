@@ -93,16 +93,6 @@ function obtenerDatosTabla($nombre_tabla, $nombre_bd, $dniusu) {
 
   $consql =  "SELECT * FROM ".$nombre_tabla." WHERE id_dniusu='".$dniusu."';";
 
-  //echo $nombre_tabla."<br>";
-  //echo $nombre_bd."<br>";
-  //echo $dniusu."<br>";
-  //echo $consql."<br>";
-  //echo $conexion_tabla->query($consql);
-
-  //$cadea = print_r($conexion_tabla->query($consql));
-  //echo $cadea."<br>";
-
-  //$res = $conexion_tabla->query($consql)->fetchAll();
   $res = $conexion_tabla->query($consql);
   
   return $res;
@@ -110,7 +100,6 @@ function obtenerDatosTabla($nombre_tabla, $nombre_bd, $dniusu) {
   $res = null;
   $conexion_tabla = null;
 }
-
 
 
 /* Cargar en tabla los datos obtenidos de la base de datos */
@@ -131,7 +120,6 @@ function mostrarDatos($items) {
 /*************************/
 
 /* Nombre de la base de datos MongoDB */
-//$mongodb = 'proyar';
 $mongodb = 'armanpruebas';
 
 /**

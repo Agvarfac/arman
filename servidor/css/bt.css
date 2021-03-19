@@ -7,7 +7,6 @@
 
 .container {
   margin-top: 2rem;
-
 }
 
 form {
@@ -23,7 +22,8 @@ ul {
   list-style: none;
 }
 
-li {
+#editap,
+#nuevop {
   margin-top: 1rem;
   margin-bottom: 1rem;
   color:dodgerblue;

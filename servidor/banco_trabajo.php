@@ -20,7 +20,7 @@
     <img class="navbar-brand " src="img/Arman_logo32.png" alt="Logotipo de Arman">
     <ul class="navbar-nav">
       <li class="nav-item"><a class="nav-link text-white" href="inventario.php">Inventario</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="catalogo.php">Historico</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="catalogo.php">Cat&aacute;logo</a></li>
       <li class="nav-item"><a class="nav-link text-white activo" href="banco_trabajo">Banco de trabajo</a></li>
     </ul>
     <div class="navbar-text ml-sm-auto">
@@ -28,7 +28,7 @@
       <a class="nav-link text-white" href="#">
         <?php
         session_start();
-        //echo $_SESSION["usuarioSesion"];
+        echo $_SESSION["usuarioSesion"];
         ?>
       </a>
     </div>

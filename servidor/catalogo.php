@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
   <link rel="stylesheet" href="css/cabecera.css">
-  <link rel="stylesheet" href="estilo-proxecto.css" />
+  <link rel="stylesheet" href="css/estilo-proxecto.css" />
+  <link rel="stylesheet" href="css/catalogo.css">
   <title>Catalogo</title>
 </head>
 
@@ -45,8 +46,6 @@
 
   $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
-  //$filter = ['_id' => 2];
-  //$filter = [];
   $options = [];
   $filter = [];
 
@@ -60,50 +59,124 @@
   $pr_finalizados = $pr_encurso = [];
 
   foreach ($rows as $document) {
-      // $dat = array();
-      // $dat = asignarDatosProyecto($obj);
-      // array_push($proyectos, $dat);
+
       $document = json_decode(json_encode($document), true);
       if ($document['Finalizado'] == 'true') {
           array_push($pr_finalizados, $document);
       } elseif ($document['Finalizado'] == 'false') {
           array_push($pr_encurso, $document);
       }
-      //print_r($document["Titulo"]);
-      //array_push($proyectos,$document);
-      //print("<br><br>");
   }
   ?>
 
   <div class="container">
     
-    <!-- porlle id aos section, display flex ea unha lista start 
-    e a outra end -->
-    <section>
-      
-        <div id="finalizados">
+    <section id="listasproyectos" class="row align_items-baseline">
+      <br>
+        <div id="finalizados" class="col">
           <h4>Proyectos concluidos</h4>
           <ul>
-            <?php foreach ($pr_finalizados as $pro) {
-                print '<li onclick="">' . $pro['Titulo'] . '</li>';
+            <?php 
+            $n=0;
+            foreach ($pr_finalizados as $pro) {
+                print '<li><a onclick="">' . $pro['Titulo'] . '</a></li>';
             } ?>
           </ul>
         </div>
 
-        <div id="encurso">
+        <div id="encurso" class="col">
           <h4>Proyectos en curso</h4>
           <ul>
             <?php foreach ($pr_encurso as $pro) {
-                print '<li onclick="">' . $pro['Titulo'] . '</li>';
+                print '<li><a onclick="">' . $pro['Titulo'] . '</a></li>';
             } ?>
           </ul>
         </div>
 
     </section>
 
+          
+    <?php 
+    $n = 0;
+    foreach ($pr_finalizados as $pro) { ?>
+    <section id="<?php echo 'p'.$n  ?>" class="d-none">
+        <h3><?php echo $pro['Titulo']; ?></h3>
+        <hr>
+        <div id="preparacion" class="card">
+
+          <div class="card-header">
+            Esquema y componentes
+          </div>
+
+          <div class="card-body">
+            <p class="card-title">Esquema</p>
+            <img class="card-img-top" src="<?php echo $pro[
+                'EsquemaElectrico'
+            ]; ?>" alt="Esquema eléctrico">
+            <p>
+              <?php echo $pro['Descripcion']; ?>
+
+            </p>
+            <p class="card-title">Componentes</p>
+
+            <?php
+            $claves = array_keys($pro['Componentes']);
+            echo "<table class='table table-bordered table-hover table-sm'>";
+            echo '<tbody>';
+            foreach ($claves as $cla) {
+                print '<tr><td>' . $cla . '</td>';
+                print "<td class='dato'>" .
+                    $pro['Componentes'][$cla] .
+                    '</td></tr>';
+            }
+            echo '</tbody>';
+            echo '</table>';
+            ?>
+
+            <!-- Al hacer clic en este botón se mostrará el código fuente del proyecto-->
+            <!-- inactivo por el momento -->
+            <button class="btn btn-codigo">C&oacute;digo</button>
+          </div>
+
+
+          <!-- Etapas de montaje -->
+              <?php foreach ($pro['Etapas'] as $et) {
+
+                  print "<div class='card'>";
+                  print "<div class='card-header'>";
+                  echo $et['Nombre'];
+                  print '</div>';
+                  print "<div class='card-body'>";
+                  ?>
+                  <img class="img-fluid" style="float:left; padding-right:10px" src="
+                  <?php echo $et['Imagen']; ?>" alt="imagen">
+
+              <p class="text-justify"> <?php 
+              echo $et['Comentario']; ?> </p>
+            </div>
+          </div>
+          <?php
+              } ?>
+
+      <!-- Resultado final -->
+      <div class="card">
+        <div class="card-header">
+          <p>Resultado final</p>
+        </div>
+        <div class="card-body">
+          <video width="320" height="240" controls src="video/<?php 
+          echo $pro['Resultado']; ?>"></video>
+        </div>
+      </div>
+    </section>
+    <?php } ?>
+
   
-    <?php foreach ($pr_finalizados as $pro) { ?>
-    <section class="">
+    <!-- Generación del proyecto -->
+    <?php 
+    $n=0;
+    foreach ($pr_encurso as $pro) { ?>
+    <section id="<?php echo 'p'.$n  ?>" class="">
         <h3><?php echo $pro['Titulo']; ?></h3>
         <hr>
         <div id="preparacion" class="card">
@@ -148,15 +221,14 @@
 
                   print "<div class='card'>";
                   print "<div class='card-header'>";
-                  // echo $et->Nombre;
                   echo $et['Nombre'];
                   print '</div>';
                   print "<div class='card-body'>";
                   ?>
-              <img class="img-fluid" style="float:left; padding-right:10px" src="<?php // echo $et->Imagen
+              <img class="img-fluid" style="float:left; padding-right:10px" src="<?php 
               echo $et['Imagen']; ?>" alt="imagen">
 
-              <p class="text-justify"> <?php // echo $et->Comentario
+              <p class="text-justify"> <?php 
               echo $et['Comentario']; ?> </p>
             </div>
           </div>
@@ -169,95 +241,33 @@
           <p>Resultado final</p>
         </div>
         <div class="card-body">
-          <video width="320" height="240" controls src="video/<?php //  echo $pro->Resultado
+          <video width="320" height="240" controls src="video/<?php 
           echo $pro['Resultado']; ?>"></video>
         </div>
       </div>
     </section>
-    <?php } ?>
-
-
-
-      <!-- meterlle un foreach para que cargue tódolos proxectos 
-      aínda que agochados e ilos amosando sengundo se faga clic nas 
-      ligazóns de cadansua listaxe -->
-
-    <?php foreach ($pr_encurso as $pro) { ?>
-    <section class="">
-        <h3><?php echo $pro['Titulo']; ?></h3>
-        <hr>
-        <div id="preparacion" class="card">
-
-          <div class="card-header">
-            Esquema y componentes
-          </div>
-
-          <div class="card-body">
-            <p class="card-title">Esquema</p>
-            <img class="card-img-top" src="<?php echo $pro[
-                'EsquemaElectrico'
-            ]; ?>" alt="Esquema eléctrico">
-            <p>
-              <?php echo $pro['Descripcion']; ?>
-
-            </p>
-            <p class="card-title">Componentes</p>
-
-            <?php
-            $claves = array_keys($pro['Componentes']);
-            echo "<table class='table table-bordered table-hover table-sm'>";
-            echo '<tbody>';
-            foreach ($claves as $cla) {
-                print '<tr><td>' . $cla . '</td>';
-                print "<td class='dato'>" .
-                    $pro['Componentes'][$cla] .
-                    '</td></tr>';
-            }
-            echo '</tbody>';
-            echo '</table>';
-            ?>
-
-            <!-- Al hacer clic en este botón se mostrará el código fuente del proyecto-->
-            <!-- inactivo por el momento -->
-            <button class="btn btn-codigo">C&oacute;digo</button>
-          </div>
-
-
-          <!-- Etapas de montaje -->
-              <?php foreach ($pro['Etapas'] as $et) {
-
-                  print "<div class='card'>";
-                  print "<div class='card-header'>";
-                  // echo $et->Nombre;
-                  echo $et['Nombre'];
-                  print '</div>';
-                  print "<div class='card-body'>";
-                  ?>
-              <img class="img-fluid" style="float:left; padding-right:10px" src="<?php // echo $et->Imagen
-              echo $et['Imagen']; ?>" alt="imagen">
-
-              <p class="text-justify"> <?php // echo $et->Comentario
-              echo $et['Comentario']; ?> </p>
-            </div>
-          </div>
-          <?php
-              } ?>
-
-      <!-- Resultado final -->
-      <div class="card">
-        <div class="card-header">
-          <p>Resultado final</p>
-        </div>
-        <div class="card-body">
-          <video width="320" height="240" controls src="video/<?php //  echo $pro->Resultado
-          echo $pro['Resultado']; ?>"></video>
-        </div>
-      </div>
-    </section>
-    <?php } ?>
+    <?php $n++; } ?>
 
 
   </div>
+
+  <script>
+    var proyecto_anterior;
+    function mostrarProyecto(id) {
+      console.log(id);
+      var clave = '#'+id;
+      console.log(clave);
+      if(proyecto_anterior) {
+        $(proyecto_anterior).hide();
+      }
+      $(clave).show();
+      proyecto_anterior = clave;
+
+    }
+
+  </script>
+
+
 
 </body>
 
